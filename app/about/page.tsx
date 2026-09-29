@@ -1,3 +1,23 @@
+import { PageHeader } from "@/components/ui/page-header";
+import { AboutStory } from "@/components/sections/about-story";
+import { AboutEducation } from "@/components/sections/about-education";
+import { site } from "@/lib/constants";
+
+export const metadata = {
+  title: "About",
+  description: `About ${site.name} — ${site.role}.`,
+};
+
 export default function AboutPage() {
-  return <div className="mx-auto max-w-6xl px-6 py-24"><h1 className="text-3xl font-semibold">About</h1></div>;
+  return (
+    <>
+      <PageHeader
+        eyebrow="About"
+        title="A self-taught developer who ships AI products"
+        description="The short version: I learned to build by building. Here's the long version."
+      />
+      <AboutStory />
+      <AboutEducation />
+    </>
+  );
 }

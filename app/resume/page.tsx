@@ -1,3 +1,21 @@
+import { PageHeader } from "@/components/ui/page-header";
+import { ResumeView } from "@/components/sections/resume-view";
+import { site } from "@/lib/constants";
+
+export const metadata = {
+  title: "Resume",
+  description: `Resume and academic results for ${site.name}.`,
+};
+
 export default function ResumePage() {
-  return <div className="mx-auto max-w-6xl px-6 py-24"><h1 className="text-3xl font-semibold">Resume</h1></div>;
+  return (
+    <>
+      <PageHeader
+        eyebrow="Resume"
+        title="Resume & academic results"
+        description="Download the PDF or view the full academic transcript below."
+      />
+      <ResumeView />
+    </>
+  );
 }
