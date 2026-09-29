@@ -20,3 +20,10 @@ export const nav = [
   { label: "Resume", href: "/resume" },
   { label: "Blog", href: "/blog" },
 ];
+
+export const cta={
+  viewProjects: { label: "View Projects", href: "/projects" },
+  downloadCv: { label: "Download CV", href: "/resume.pdf" },
+  contact: { label: "Contact Me", href: "/contact" },
+  email: { label: "Email Me", href: `mailto:${site.email}` },
+};
