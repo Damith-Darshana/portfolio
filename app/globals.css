@@ -1,0 +1,64 @@
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
+@import "tailwindcss";
+
+@theme {
+  /* --- Custom Fonts --- */
+  --font-sans: "Geist Variable", system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, monospace;
+
+  /* --- Sizing & Utilities --- */
+  --max-width-prose: 65ch;
+  --animate-transition-duration: 150ms;
+
+  /* --- Tailwind v4 Theme Color Mapping --- */
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  
+  --color-accent: var(--accent);
+  --color-accent-dark: #818CF8;
+}
+
+@layer base {
+  :root {
+    --bg: #FFFFFF;
+    --surface: #F7F7F8;
+    --border: #E5E5E7;
+    --text-primary: #0A0A0A;
+    --text-secondary: #52525B;
+    --text-muted: #A1A1AA;
+    --accent: #4F46E5;
+  }
+
+  .dark {
+    --bg: #0A0A0B;
+    --surface: #141416;
+    --border: #26262A;
+    --text-primary: #FAFAFA;
+    --text-secondary: #A1A1AA;
+    --text-muted: #52525B;
+    --accent: #818CF8;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-bg text-text-primary font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    @apply bg-accent/20 text-text-primary;
+  }
+}
