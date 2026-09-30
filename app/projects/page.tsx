@@ -1,6 +1,8 @@
 import { PageHeader } from "@/components/ui/page-header";
 import { ProjectsGrid } from "@/components/sections/projects-grid";
 import { site } from "@/lib/constants";
+import { buildCrumbs } from "@/lib/breadcrumbs";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 export const metadata = {
   title: "Projects",
@@ -10,6 +12,7 @@ export const metadata = {
 export default function ProjectsPage() {
   return (
     <>
+      <Breadcrumbs crumbs={buildCrumbs({ label: "Projects" })} />
       <PageHeader
         eyebrow="Projects"
         title="Things I've built"

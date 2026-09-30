@@ -1,6 +1,8 @@
 import { PageHeader } from "@/components/ui/page-header";
 import { ContactLinks } from "@/components/sections/contact-links";
 import { site } from "@/lib/constants";
+import { buildCrumbs } from "@/lib/breadcrumbs";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 export const metadata = {
   title: "Contact",
@@ -10,6 +12,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <>
+      <Breadcrumbs crumbs={buildCrumbs({ label: "Contact" })} />
       <PageHeader
         eyebrow="Contact"
         title="Let's talk"

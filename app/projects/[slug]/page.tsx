@@ -7,6 +7,8 @@ import {
   getProjectBySlug,
   getProjectContentBySlug,
 } from "@/lib/projects";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { buildCrumbs } from "@/lib/breadcrumbs";
 
 type Params = Promise<{ slug: string }>;
 
@@ -33,6 +35,12 @@ export default async function ProjectPage({ params }: { params: Params }) {
 
   return (
     <>
+      <Breadcrumbs
+  crumbs={buildCrumbs(
+    { label: "Projects", href: "/projects" },
+    { label: project.title }
+  )}
+/>
       <CaseStudyHeader project={project} />
       <article className="mx-auto max-w-6xl px-6 py-12">
         <div className="max-w-prose">
